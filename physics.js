@@ -27,7 +27,6 @@ const Physics = (entities, { touches, time, dispatch }) => {
 
         }
 
-
         if (entities[`ObstacleTop${index}`].body.bounds.max.x <= 0) {
             const pipeSizePos = getPipeSizePosPair(windowWidth * 0.9);
 

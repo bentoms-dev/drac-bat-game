@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 30
+  },
+  gameOver: {
+    color: '#ffffff',
+    fontSize: 60
   }
 })
 
@@ -31,13 +35,15 @@ export default function App() {
   const [running, setRunning] = useState(false)
   const [gameEngine, setGameEngine] = useState(null)
   const [currentPoints, setCurrentPoints] = useState(0)
+  const [gameOver, setGameOver] = useState(false)
+
   useEffect(() => {
     setRunning(false)
   }, [])
   return (
     <View style={styles.container}>
       <ImageBackground source={ bgImage } resizeMode="cover" style={styles.image}>
-        <Text style={{ textAlign: 'center', fontSize: 40, fontWeight: 'bold', margin: 20, color: 'white', flex: 1 }}>{currentPoints}</Text>
+        <Text style={{ textAlign: 'center', fontSize: 40, fontWeight: 'bold', margin: 20, color: 'white', flex: 1, position: 'absolute',  top: 10, zIndex: 1 }}>{currentPoints}</Text>
         <GameEngine
           ref={(ref) => { setGameEngine(ref) }}
           systems={[Physics]}
@@ -47,6 +53,7 @@ export default function App() {
             switch (e.type) {
               case 'game_over':
                 setRunning(false)
+                setGameOver(true)
                 gameEngine.stop()
                 break;
               case 'new_point':
@@ -62,6 +69,9 @@ export default function App() {
 
         {!running ?
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            { gameOver &&
+              <Text style={styles.gameOver}>GAME OVER</Text>
+            }
             <Button
             type="info"
             onPress={() => {

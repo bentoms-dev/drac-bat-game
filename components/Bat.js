@@ -26,7 +26,7 @@ const Bat = props => {
             width: widthBody,
             height: heightBody
         }}>
-            <ImageBackground source={ bat } resizeMode="contain" style={styles.image}></ImageBackground>
+            <ImageBackground source={ bat } resizeMode="cover" style={styles.image}></ImageBackground>
         </View>
     )
 }
