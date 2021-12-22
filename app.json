@@ -2,7 +2,7 @@
   "expo": {
     "name": "drac-bat",
     "slug": "drac-bat",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -24,6 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#171723"
       },
+      "versionCode": 3,
       "permissions": [],
       "package": "com.galleongames.dracbat"
     },
