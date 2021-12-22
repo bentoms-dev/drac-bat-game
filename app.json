@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#171723"
-      }
+      },
+      "package": "com.galleongames.dracbat"
     },
     "web": {
       "favicon": "./assets/favicon.png"
