@@ -24,6 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#171723"
       },
+      "permissions": [],
       "package": "com.galleongames.dracbat"
     },
     "web": {
