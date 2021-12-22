@@ -9,10 +9,8 @@ export const getRandom = (min, max) => {
 
 export const getPipeSizePosPair = (addToPosX = 0) => {
     let yPosTop = -getRandom(300, windowHeight - 100)
-    let precision = 100; // 2 decimals
-    let randomNum = Math.floor(Math.random() * (2 * precision - 1.7 * precision) + 1.7 * precision) / (1*precision);
 
-    const pipeTop = { pos: { x: windowWidth + addToPosX, y: yPosTop }, size: { height: windowHeight * randomNum, width: 75 } }
+    const pipeTop = { pos: { x: windowWidth + addToPosX, y: yPosTop }, size: { height: windowHeight * 2, width: 75 } }
     const pipeBottom = { pos: { x: windowWidth + addToPosX, y: windowHeight * 2 + 200 + yPosTop }, size: { height: windowHeight * 2, width: 75 } }
 
     return { pipeTop, pipeBottom }

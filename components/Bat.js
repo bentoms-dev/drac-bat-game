@@ -1,6 +1,15 @@
 import Matter from 'matter-js'
 import React from 'react'
-import { View } from 'react-native'
+import { View, ImageBackground, StyleSheet } from 'react-native'
+import bat from '.././assets/bat.gif';
+
+const styles = StyleSheet.create({
+    image: {
+      flex: 1,
+      justifyContent: "center"
+    }
+  })
+
 
 const Bat = props => {
     const widthBody = props.body.bounds.max.x - props.body.bounds.min.x
@@ -9,20 +18,16 @@ const Bat = props => {
     const xBody = props.body.position.x - widthBody /2
     const yBody = props.body.position.y - heightBody /2
 
-    const color = props.color;
-
     return(
         <View style={{
-            borderWidth: 1,
-            borderColor: color,
-            borderStyle: 'solid',
             position: 'absolute',
-            backgroundColor: 'black',
             left: xBody,
             top: yBody,
             width: widthBody,
             height: heightBody
-        }}/>
+        }}>
+            <ImageBackground source={ bat } resizeMode="contain" style={styles.image}></ImageBackground>
+        </View>
     )
 }
 

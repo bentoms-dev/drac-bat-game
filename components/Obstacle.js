@@ -1,6 +1,15 @@
 import Matter from 'matter-js'
 import React from 'react'
-import { View } from 'react-native'
+import { View, ImageBackground, StyleSheet } from 'react-native'
+import pipeBg from '.././assets/pipe-bg.png';
+import pipeHead from '.././assets/pipe-head.png';
+
+const styles = StyleSheet.create({
+    image: {
+      flex: 1,
+      justifyContent: "center"
+    }
+  })
 
 const Obstacle = props => {
     const widthBody = props.body.bounds.max.x - props.body.bounds.min.x
@@ -13,16 +22,14 @@ const Obstacle = props => {
 
     return (
         <View style={{
-            borderWidth: 1,
-            borderColor: color,
-            borderStyle: 'solid',
             position: 'absolute',
-            backgroundColor: color,
             left: xBody,
             top: yBody,
             width: widthBody,
             height: heightBody
-        }} />
+        }} >
+         <ImageBackground source={ pipeBg } resizeMode="repeat" style={styles.image}></ImageBackground>
+        </View>
     )
 }
 
