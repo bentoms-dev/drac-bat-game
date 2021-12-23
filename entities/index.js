@@ -22,7 +22,7 @@ export default restart => {
     return {
         physics: { engine, world },
 
-        Bat: Bat(world, 'white', { x: 50, y: 300 }, { height: 65, width: 65 }),
+        Bat: Bat(world, 'white', { x: 50, y: 300 }, { height: 45, width: 45 }),
 
         ObstacleTop1: Obstacle(world, 'ObstacleTop1', 'red', pipeSizePosA.pipeTop.pos, pipeSizePosA.pipeTop.size),
         ObstacleBottom1: Obstacle(world, 'ObstacleBottom1', 'blue', pipeSizePosA.pipeBottom.pos, pipeSizePosA.pipeBottom.size),

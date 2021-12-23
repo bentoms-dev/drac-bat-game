@@ -1,7 +1,6 @@
 import Matter from "matter-js";
 import { getPipeSizePosPair } from "./utils/random";
-
-import { Dimensions } from 'react-native'
+import { Dimensions } from 'react-native';
 
 const windowHeight = Dimensions.get('window').height
 const windowWidth = Dimensions.get('window').width
@@ -13,7 +12,7 @@ const Physics = (entities, { touches, time, dispatch }) => {
         .forEach(t => {
             Matter.Body.setVelocity(entities.Bat .body, {
                 x: 0,
-                y: -6
+                y: -8
             })
         })
 
@@ -39,7 +38,6 @@ const Physics = (entities, { touches, time, dispatch }) => {
         Matter.Body.translate(entities[`ObstacleTop${index}`].body, { x: -3, y: 0 })
         Matter.Body.translate(entities[`ObstacleBottom${index}`].body, { x: -3, y: 0 })
     }
-
 
     Matter.Events.on(engine, 'collisionStart', (event) => {
         dispatch({ type: 'game_over' })

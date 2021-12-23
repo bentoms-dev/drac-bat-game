@@ -6,11 +6,12 @@ import Button from 'react-native-flat-button'
 import entities from './entities';
 import Physics from './physics';
 import bgImage from './assets/background.jpg';
-
+import skull from './assets/skull.gif';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    fontFamily: 'Arial',
     backgroundColor: '#171723'
   },
   image: {
@@ -27,8 +28,30 @@ const styles = StyleSheet.create({
   },
   gameOver: {
     color: '#ffffff',
-    fontSize: 60
-  }
+    fontSize: 60,
+    fontWeight: 'bold',
+    textShadowColor: 'black',
+    textShadowRadius: 5,
+  },
+  points: {
+    textAlign: 'center',
+    fontSize: 35,
+    fontWeight: 'bold',
+    margin: 20,
+    color: 'white',
+    backgroundColor: 'black',
+    padding: 5,
+    borderRadius: 8,
+    height: 40,
+    lineHeight: 37,
+    flex: 1,
+    position: 'absolute',
+    top: 10,
+    zIndex: 1
+  },
+  skull: {
+    height: 50,
+  },
 })
 
 export default function App() {
@@ -43,7 +66,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground source={ bgImage } resizeMode="cover" style={styles.image}>
-        <Text style={{ textAlign: 'center', fontSize: 40, fontWeight: 'bold', margin: 20, color: 'white', flex: 1, position: 'absolute',  top: 10, zIndex: 1 }}>{currentPoints}</Text>
+        <Text style={styles.points}>{currentPoints}</Text>
         <GameEngine
           ref={(ref) => { setGameEngine(ref) }}
           systems={[Physics]}
@@ -70,7 +93,10 @@ export default function App() {
         {!running ?
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             { gameOver &&
-              <Text style={styles.gameOver}>GAME OVER</Text>
+              <View>
+                 <ImageBackground source={ skull } resizeMode="contain" style={styles.skull}></ImageBackground>
+                <Text style={styles.gameOver}>GAME OVER</Text>
+              </View>
             }
             <Button
             type="info"

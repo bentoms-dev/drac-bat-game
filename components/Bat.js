@@ -1,7 +1,7 @@
 import Matter from 'matter-js'
 import React from 'react'
 import { View, ImageBackground, StyleSheet } from 'react-native'
-import bat from '.././assets/bat.gif';
+import bat from '.././assets/dracbat.gif';
 
 const styles = StyleSheet.create({
     image: {
