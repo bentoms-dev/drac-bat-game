@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "drac-bat",
-    "slug": "drac-bat",
+    "name": "Dracbat",
+    "slug": "dracbat",
     "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
